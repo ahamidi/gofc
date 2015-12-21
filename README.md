@@ -5,8 +5,8 @@
 * [x] - Authentication
 * [ ] - Person Lookup
     * [x] By Email
-    * [ ] By Phone
-    * [ ] By Twitter
-    * [ ] By Facebook
+    * [x] By Phone
+    * [x] By Twitter
+    * [x] By Facebook
 * [ ] - Docs
 * [ ] - Tests
