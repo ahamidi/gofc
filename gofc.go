@@ -28,8 +28,7 @@ func (fc *FCClient) Person() *PersonAPI {
 	return &PersonAPI{fc.apiKey, PERSON_API_ENDPOINT}
 }
 
-func (p *PersonAPI) GetByEmail(email string) (*PersonResponse, error) {
-
+func getPersonBy(p *PersonAPI, method string, value string) (*PersonResponse, error) {
 	// Construct URL
 	baseUrl, err := url.Parse(p.url)
 	if err != nil {
@@ -38,7 +37,7 @@ func (p *PersonAPI) GetByEmail(email string) (*PersonResponse, error) {
 
 	params := url.Values{}
 	params.Add("apiKey", p.apiKey)
-	params.Add("email", email)
+	params.Add(method, value)
 
 	baseUrl.RawQuery = params.Encode()
 
@@ -59,4 +58,25 @@ func (p *PersonAPI) GetByEmail(email string) (*PersonResponse, error) {
 	}
 
 	return &pr, nil
+
+}
+
+func (p *PersonAPI) GetByEmail(email string) (*PersonResponse, error) {
+	return getPersonBy(p, "email", email)
+}
+
+func (p *PersonAPI) GetByTwitter(twitter string) (*PersonResponse, error) {
+	return getPersonBy(p, "twitter", twitter)
+}
+
+func (p *PersonAPI) GetByPhone(phone string) (*PersonResponse, error) {
+	return getPersonBy(p, "phone", phone)
+}
+
+func (p *PersonAPI) GetByFacebookUsername(facebookUsername string) (*PersonResponse, error) {
+	return getPersonBy(p, "facebookUsername", facebookUsername)
+}
+
+func (p *PersonAPI) GetByFacebookID(facebookID string) (*PersonResponse, error) {
+	return getPersonBy(p, "facebookId", facebookID)
 }
