@@ -2,6 +2,7 @@ package gofc
 
 import (
 	"encoding/json"
+	"errors"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -29,6 +30,11 @@ func (fc *FCClient) Person() *PersonAPI {
 }
 
 func getPersonBy(p *PersonAPI, method string, value string) (*PersonResponse, error) {
+	// check value is not empty
+	if value == "" {
+		return nil, errors.New("Value missing.")
+	}
+
 	// Construct URL
 	baseUrl, err := url.Parse(p.url)
 	if err != nil {
