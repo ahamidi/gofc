@@ -2,11 +2,11 @@
 
 #### TODO
 
-* [x] - Authentication
-* [ ] - Person Lookup
+* [x] Authentication
+* [ ] Person Lookup
     * [x] By Email
     * [x] By Phone
     * [x] By Twitter
     * [x] By Facebook
-* [ ] - Docs
-* [ ] - Tests
+* [ ] Docs
+* [ ] Tests
