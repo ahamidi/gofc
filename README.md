@@ -3,11 +3,7 @@
 #### TODO
 
 * [x] Authentication
-* [x] Person Lookup
-    * [x] By Email
-    * [x] By Phone
-    * [x] By Twitter
-    * [x] By Facebook
+* [x] Person API
 * [ ] Docs
 * [ ] Tests
 
@@ -26,7 +22,7 @@ res, err := fc.Person().GetByEmail("joe@example.com")
 If you'd like to use the Gofc CLI tool
 
 ```
-sh> go build cmd/gofc ./...
+sh> go build ./cmd/gofc
 sh> ./gofc -h
 sh> ./gofc -method "twitter" -value "someone" -apikey "API_KEY"
 ```
