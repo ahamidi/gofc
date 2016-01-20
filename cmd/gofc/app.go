@@ -13,7 +13,6 @@ var method = flag.String("method", "email", "Lookup Method (email|twitter|fbuser
 var value = flag.String("value", "", "Value to lookup")
 
 func main() {
-	log.Println("Gofc")
 	flag.Parse()
 
 	fc := gofc.NewClient(*apikey)
